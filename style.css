@@ -1,82 +1,88 @@
 * {
-    margin: 0;
-    padding: 0;
-  }
-  
-  .container {
-    text-align: center;
-  
-    display: grid;
-    grid-template-columns: 1fr 5fr;
-    gap: 4px;;
-  }
-  
-  .container div {
-    padding: 15px;
-    font-size: 32px;
-    font-family: Helvetica;
-    font-weight: bold;
-    color: white;
-  }
-  
-  .header {
-    background-color: #393f4d;
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    grid-column: 2/3;
-  }
+  margin: 0;
+  padding: 0;
+}
 
-  .sidebar {
-    background-color: #C50208;
-    grid-row: 1/4;
-    display: grid;
-    gap: 50px;
-  }
-  
-  .sidebar .side-content {
-    background-color: white;
-    color: black;
-    font-size: 16px;
-    font-weight: normal;
-  
-    display: grid;
-    align-items: center;
-  }
-  
-  
-  .project {
-    background-color: #bccbde;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 15px;
-  }
-  
-  .project p {
-    font-size: 18px;
-    font-family: sans-serif;
-    color: white;
-    text-align: left;
-  }
-  
-  .project .idea {
-    background-color: #FFFFFF;
-    color: black;
-    text-align: center;
-  }
-  
-  .idea {
-    height: 200px;
-  }
-  
-  .idea p {
-    color: black;
-    font-weight: normal;
-    font-size: 14px;
-  }
-  
-  .idea .title {
-    font-size: 18px;
-    text-align: center;
-  }
+html, body {
+  height: 100%;
+  overflow: hidden; /* Prevent overflow and scrolling */
+}
 
-  /*grid-column:1/3*/
+.container {
+  display: grid;
+  grid-template-columns: 200px 1fr; /* Sidebar (fixed 200px) and project section (fill remaining space) */
+  grid-template-rows: auto 1fr; /* Header (auto size) and content (fill remaining space) */
+  height: 100vh; /* Full height of the viewport */
+}
+
+.header {
+  background-color: #393f4d;
+  grid-column: 2 / 3; /* Make header span across both columns */
+  padding: 15px;
+  font-size: 32px;
+  font-family: Helvetica;
+  font-weight: bold;
+  color: white;
+  width: 100%;
+}
+
+.sidebar {
+  background-color: #C50208;
+  grid-row: 1 / 3; /* Sidebar should be placed in row 2, spanning from top to bottom */
+  padding: 15px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sidebar .side-content {
+  background-color: white;
+  color: black;
+  font-size: 16px;
+  font-weight: normal;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+/*background-color: #bccbde;*/
+.project {
+  background-color: #bccbde;
+  grid-row: 2 / 3;
+  padding: 15px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+  overflow-y: auto;
+}
+
+
+.project p {
+  font-size: 18px;
+  font-family: sans-serif;
+  color: white;
+  text-align: left;
+}
+
+.project .idea {
+  background-color: #FFFFFF;
+  color: black;
+  text-align: center;
+}
+
+.idea {
+  height: 200px;
+}
+
+.idea p {
+  color: black;
+  font-weight: normal;
+  font-size: 14px;
+}
+
+.idea .title {
+  font-size: 18px;
+  text-align: center;
+}
