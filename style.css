@@ -69,36 +69,61 @@ a {
   grid-row: 2 / 3;
   padding: 15px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 15px;
-  overflow-y: auto;
+  grid-template-columns: 4fr 1fr;
+  gap: 15px;  
 }
 
+.project-header {
+  grid-column: span 2; /* Make header span across both columns */
+  margin-bottom: 15px;
+  font-size: 24px;
+}
 
-.project p {
-  font-size: 18px;
-  font-family: sans-serif;
-  color: white;
-  text-align: left;
+.projects {
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:15px;
 }
 
 .project .idea {
   background-color: #F4EDD3;
   color: black;
   text-align: center;
-}
-
-.idea {
   height: 200px;
+  width: 350px;
+  border-radius: 10px;  
 }
 
 .idea p {
   color: black;
   font-weight: normal;
   font-size: 14px;
+  text-align: center;
 }
 
 .idea .title {
   font-size: 18px;
   text-align: center;
+}
+
+.announcments,
+.trending {
+  background-color: #D0D7DC;
+  padding: 10px;
+  border-radius: 8px;
+  color: black;
+}
+
+.ann {
+  background-color: #B9C6D6;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.trending-item {
+  background-color: #B9C6D6;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
 }
